@@ -8,7 +8,7 @@ import { Text, View } from './Themed';
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
-    <View>
+    <View> 
       <View style={styles.getStartedContainer}>
         <Text
           style={styles.getStartedText}
@@ -22,7 +22,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           darkColor="rgba(255,255,255,0.05)"
           lightColor="rgba(0,0,0,0.05)">
           <MonoText>{path}</MonoText>
-        </View>
+        </View> 
 
         <Text
           style={styles.getStartedText}
