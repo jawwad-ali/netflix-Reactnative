@@ -2,7 +2,7 @@
  * If you are not familiar with React Navigation, refer to the "Fundamentals" guide:
  * https://reactnavigation.org/docs/getting-started
  *
- */
+ */ 
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -15,9 +15,12 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
+
+import HomeScreen from '../screens/HomeScreen';
+import MovieDetailsScreen from '../screens/MovieDetailsScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
+
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -64,9 +67,11 @@ function BottomTabNavigator() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
-      <BottomTab.Screen
+      <BottomTab.Screen 
         name="Home"
-        component={TabOneScreen}
+        
+        component={MovieDetailsScreen}
+
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
           tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color={color} />,
@@ -76,7 +81,7 @@ function BottomTabNavigator() {
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
-              <FontAwesome
+              <FontAwesome 
                 name="info-circle"
                 size={25}
                 color={Colors[colorScheme].text}
@@ -85,7 +90,7 @@ function BottomTabNavigator() {
             </Pressable>
           ),
         })}
-      />
+      /> 
 
       <BottomTab.Screen
         name="ComingSoon"
