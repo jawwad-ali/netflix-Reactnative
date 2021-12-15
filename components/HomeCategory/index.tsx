@@ -7,7 +7,7 @@ import { Text, View } from '../../components/Themed';
 interface HomeCategoryProps {
     category: {
         id: string 
-        title: string
+        title: string 
         movies: {
             id: string,
             poster: string
