@@ -6,6 +6,7 @@ import { FlatList, Image, Pressable, ScrollView } from "react-native";
 import { MaterialIcons, Entypo, AntDesign, Ionicons, Feather } from "@expo/vector-icons";
 import EpisodeItem from "../../components/EpisodeItem";
 import { Picker } from '@react-native-picker/picker';
+import VideoPlayerComponent from "../../components/VideoPlayer";
 
 function MovieDetailsScreen() {
 
@@ -17,16 +18,19 @@ function MovieDetailsScreen() {
 
     // current season
     const [currentSeason, setCurrentSeason] = useState(firstSeason)
+    // episode season
+    const [currentEpisode, setCurrentEpisode] = useState(firstSeason.episodes.items[0])
     return (
         <View>
-            <Image
-                source={{ uri: firstEpisode.poster }}
-                style={styles.image}
-            />
+            <VideoPlayerComponent episode={currentEpisode} />
 
             <FlatList
                 data={currentSeason.episodes.items}
-                renderItem={({ item }) => <EpisodeItem episode={item} />}
+                renderItem={({ item }) => (
+                    <EpisodeItem
+                        episode={item}
+                        onPress={setCurrentEpisode}
+                    />)}
                 style={{ marginBottom: 250 }}
                 ListHeaderComponent={(
                     <View style={{ padding: 12 }}>

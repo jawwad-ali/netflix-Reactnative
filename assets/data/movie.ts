@@ -6,7 +6,7 @@ export default {
  
     plot: 'When he impresses a big lawyer with his razor-sharp mind, a college droput scores a coveted associate job, even though he has no legal credentials.',
     cast: 'Gabriel Macht, Patrick J. Adams, Rick Hoggman',
-    creator: 'Aaron Korsh', 
+    creator: 'Aaron Korsh',  
      
     seasons: {
         items: [{ 
