@@ -9,7 +9,7 @@ export default {
     creator: 'Aaron Korsh', 
      
     seasons: {
-        items: [{
+        items: [{ 
             id: 'season1',
             name: 'Season 1',
             episodes: {

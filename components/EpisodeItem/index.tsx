@@ -6,7 +6,7 @@ import styles from "./styles";
 
 interface EpisodeItemProps {
     episode: {
-        id: string,
+        id: string, 
         title: string,
         poster: string,
         duration: string,

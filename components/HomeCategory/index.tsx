@@ -4,7 +4,7 @@ import { FlatList, Image } from 'react-native';
 import styles from "./styles"
 import { Text, View } from '../../components/Themed';
 
-interface HomeCategoryProps {
+interface HomeCategoryProps { 
     category: {
         id: string 
         title: string 
