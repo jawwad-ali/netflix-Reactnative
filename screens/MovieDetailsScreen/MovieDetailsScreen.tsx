@@ -7,14 +7,14 @@ import { MaterialIcons, Entypo, AntDesign, Ionicons, Feather } from "@expo/vecto
 import EpisodeItem from "../../components/EpisodeItem";
 import { Picker } from '@react-native-picker/picker';
 import VideoPlayerComponent from "../../components/VideoPlayer";
-
+ 
 function MovieDetailsScreen() {
 
     const firstSeason = movie.seasons.items[0]
     const firstEpisode = firstSeason.episodes.items[0]
 
     // season name for the Picker
-    const seasonName = movie.seasons.items.map(season => season.name)
+    const seasonName = movie.seasons.items.map(season => season.name) 
 
     // current season
     const [currentSeason, setCurrentSeason] = useState(firstSeason)

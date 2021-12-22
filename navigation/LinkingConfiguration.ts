@@ -20,6 +20,7 @@ const linking: LinkingOptions<RootStackParamList> = {
               HomeScreen: "Home",
             },
           },
+     
           ComingSoon: {
             screens: {
               TabTwoScreen: "two",
@@ -38,6 +39,7 @@ const linking: LinkingOptions<RootStackParamList> = {
         },
       },
       Modal: "modal",
+      MovieDetailsScreen: "MovieDetailsScreen",
       NotFound: "*",
     },
   },

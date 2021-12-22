@@ -47,7 +47,6 @@ function VideoPlayerComponent(props: videPlayerProps) {
                 useNativeControls
                 usePoster={false}
                 resizeMode="contain"
-                // isLooping
                 onPlaybackStatusUpdate={status => setStatus(() => status)}
             />
         </View>
