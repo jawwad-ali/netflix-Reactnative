@@ -1,0 +1,45 @@
+type Category @model {
+  id: ID!
+  title: String!
+  movies: [Movie] @connection(keyName: "byCategory", fields: ["id"])
+}
+
+type Movie @model @key(name: "byCategory", fields: ["categoryID"]) {
+  id: ID!
+  title: String!
+  poster: String!
+  year: Int
+  numberOfSeasons: Int
+  plot: String
+  cast: String
+  creator: String
+
+  # "MOVIE will always belong to a category"
+  categoryID: ID!
+
+  # Every movie will contain list of SEASON
+  seasons: [Season] @connection(keyName: "byMovie", fields: ["id"])
+}
+
+type Season @model @key(name: "byMovie", fields: ["MovieID"]) {
+  id: ID!
+  name: String!
+
+  MovieID: ID!
+  movie: Movie @connection(fields: ["MovieID"])
+
+  # every Season has list of EPISODES
+  episode: [Episode] @connection(keyName: "bySeason", fields: ["id"])
+}
+
+type Episode @model @key(name: "bySeason", fields: ["seasonID"]) {
+  id: ID!
+  title: String!
+  poster: String!
+  duration: String!
+  plot: String!
+  video: String!
+
+  seasonID: ID!
+  season: Season @connection(fields: ["seasonID"])
+}

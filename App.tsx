@@ -10,6 +10,8 @@ import Navigation from './navigation';
 import Amplify from 'aws-amplify'
 import config from './src/aws-exports'
 import { withAuthenticator } from 'aws-amplify-react-native'
+
+// configure aws
 Amplify.configure(config)
 
 function App() {
@@ -28,4 +30,4 @@ function App() {
   }
 }
 export default withAuthenticator(App)
-// 39.49
+// 1.14.45

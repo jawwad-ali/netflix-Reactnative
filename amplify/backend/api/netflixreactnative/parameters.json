@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "netflixreactnative",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authnetflixreactnativea67f8de0",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

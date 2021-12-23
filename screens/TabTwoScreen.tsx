@@ -3,14 +3,19 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { Auth } from "aws-amplify"
+import { Auth } from 'aws-amplify';
+
 import { Pressable } from "react-native"
 
 export default function TabTwoScreen() {
 
   // user logout
-  const logOut = () => {
-    Auth.signOut()
+  async function logOut() {
+    try {
+      await Auth.signOut();
+    } catch (error) {
+      console.log('error signing out: ', error);
+    }
   }
 
   return (
