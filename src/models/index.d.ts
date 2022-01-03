@@ -1,16 +1,19 @@
-import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
+import {
+  ModelInit,
+  MutableModel,
+  PersistentModelConstructor,
+} from "@aws-amplify/datastore";
 
-
-
-
-
-export declare class Category {
+export declare class Category { 
   readonly id: string;
-  readonly title: string;
+  readonly title: string; 
   readonly movies?: (Movie | null)[];
   constructor(init: ModelInit<Category>);
-  static copyOf(source: Category, mutator: (draft: MutableModel<Category>) => MutableModel<Category> | void): Category;
-}
+  static copyOf(
+    source: Category,
+    mutator: (draft: MutableModel<Category>) => MutableModel<Category> | void
+  ): Category;
+} 
 
 export declare class Movie {
   readonly id: string;
@@ -21,10 +24,13 @@ export declare class Movie {
   readonly plot?: string;
   readonly cast?: string;
   readonly creator?: string;
-  readonly categoryID: string;
+  readonly categoryID: string; 
   readonly seasons?: (Season | null)[];
   constructor(init: ModelInit<Movie>);
-  static copyOf(source: Movie, mutator: (draft: MutableModel<Movie>) => MutableModel<Movie> | void): Movie;
+  static copyOf(
+    source: Movie,
+    mutator: (draft: MutableModel<Movie>) => MutableModel<Movie> | void
+  ): Movie;
 }
 
 export declare class Season {
@@ -33,7 +39,10 @@ export declare class Season {
   readonly movie?: Movie;
   readonly episode?: (Episode | null)[];
   constructor(init: ModelInit<Season>);
-  static copyOf(source: Season, mutator: (draft: MutableModel<Season>) => MutableModel<Season> | void): Season;
+  static copyOf(
+    source: Season,
+    mutator: (draft: MutableModel<Season>) => MutableModel<Season> | void
+  ): Season;
 }
 
 export declare class Episode {
@@ -45,5 +54,8 @@ export declare class Episode {
   readonly video: string;
   readonly season?: Season;
   constructor(init: ModelInit<Episode>);
-  static copyOf(source: Episode, mutator: (draft: MutableModel<Episode>) => MutableModel<Episode> | void): Episode;
+  static copyOf(
+    source: Episode,
+    mutator: (draft: MutableModel<Episode>) => MutableModel<Episode> | void
+  ): Episode;
 }

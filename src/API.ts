@@ -6,7 +6,7 @@ export type CreateCategoryInput = {
   id?: string | null,
   title: string,
   _version?: number | null,
-};
+}; 
 
 export type ModelCategoryConditionInput = {
   title?: ModelStringInput | null,

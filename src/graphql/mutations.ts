@@ -11,7 +11,7 @@ export const createCategory = /* GraphQL */ `
       id
       title
       movies {
-        items {
+        items { 
           id
           title
           poster

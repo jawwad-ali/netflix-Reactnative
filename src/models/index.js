@@ -8,7 +8,7 @@ const { Category, Movie, Season, Episode } = initSchema(schema);
 
 export {
   Category,
-  Movie,
+  Movie, 
   Season,
   Episode
 };

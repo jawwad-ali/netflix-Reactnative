@@ -7,12 +7,12 @@ export const syncCategories = /* GraphQL */ `
     $filter: ModelCategoryFilterInput
     $limit: Int
     $nextToken: String
-    $lastSync: AWSTimestamp
+    $lastSync: AWSTimestamp 
   ) {
     syncCategories(
       filter: $filter
       limit: $limit
-      nextToken: $nextToken
+      nextToken: $nextToken 
       lastSync: $lastSync
     ) {
       items {

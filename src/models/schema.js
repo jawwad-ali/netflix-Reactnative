@@ -1,6 +1,6 @@
 export const schema = {
     "models": {
-        "Category": {
+        "Category": { 
             "name": "Category",
             "fields": {
                 "id": {

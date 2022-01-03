@@ -2,13 +2,13 @@ export default {
     id: 'movie1',
     title: 'Suits',
     year: 2019, 
-    numberOfSeasons: 9,
+    numberOfSeasons: 9,  
  
     plot: 'When he impresses a big lawyer with his razor-sharp mind, a college droput scores a coveted associate job, even though he has no legal credentials.',
     cast: 'Gabriel Macht, Patrick J. Adams, Rick Hoggman',
     creator: 'Aaron Korsh',  
-     
-    seasons: {
+      
+    seasons: { 
         items: [{ 
             id: 'season1',
             name: 'Season 1',
