@@ -9,6 +9,7 @@ import { Picker } from '@react-native-picker/picker';
 import VideoPlayerComponent from "../../components/VideoPlayer";
 
 import { DataStore } from "aws-amplify"
+
 import { Movie, Season, Episode } from "../../src/models"
 import { useRoute } from "@react-navigation/native"
 
@@ -25,7 +26,7 @@ function MovieDetailsScreen() {
 
     // season name for the Picker
     const seasonNames = seasons ? seasons.map(season => season.name) : []
-    console.log(seasonNames)
+    console.log("seasons", seasonNames)
     // current Route
     const route = useRoute()
 
@@ -36,8 +37,8 @@ function MovieDetailsScreen() {
         fetchMovieDetails()
     }, [])
 
-    // fetch season
     useEffect(() => {
+        // fetch season
         if (!movie) {
             return;
         }
@@ -49,10 +50,20 @@ function MovieDetailsScreen() {
         fetchSeasons();
     }, [movie])
 
-    return (
-        <View>
-            {currentEpisode && <VideoPlayerComponent episode={currentEpisode} />}
+    useEffect(() => {
+        if (!currentSeason) return
 
+        const fetchEpisodes = async () => {
+            const seasonEpisode = (await DataStore.query(Episode)).filter(episode => episode?.season?.id == currentSeason.id)
+            setEpisodes(seasonEpisode)
+            setCurrentEpisode(seasonEpisode[0])
+        }
+        fetchEpisodes()
+    }, [currentSeason])
+
+    return (
+        <View style={{ flex: 1 }}>
+            {currentEpisode && <VideoPlayerComponent episode={currentEpisode} />}
             <FlatList
                 data={episodes}
                 renderItem={({ item }) => (
@@ -115,7 +126,6 @@ function MovieDetailsScreen() {
                             </View>
                         </View>
 
-
                         {currentSeason && (
                             <Picker
                                 selectedValue={currentSeason.name}
@@ -129,12 +139,10 @@ function MovieDetailsScreen() {
                                 ))}
                             </Picker>
                         )}
-
                     </View>
                 )}
             />
         </View>
     )
 }
-
 export default MovieDetailsScreen

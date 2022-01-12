@@ -1,0 +1,12 @@
+{
+  "resourceName": "netflixmedia",
+  "policyUUID": "4c151a9d",
+  "bucketName": "netflixreactnativea2d6f9edaffc437fafc5331534995",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

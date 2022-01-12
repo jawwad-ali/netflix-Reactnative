@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
   plot: {
     color: "darkgrey",
+    marginBottom: 25,
   },
 });
 

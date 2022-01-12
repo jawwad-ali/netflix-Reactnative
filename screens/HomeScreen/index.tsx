@@ -13,7 +13,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
-    // fetch CATEGORIES from datastore
+    // fetch CATEGORIES from datastore 
     const fetchCategories = async () => {
       setCategories(await DataStore.query(Category))
     }

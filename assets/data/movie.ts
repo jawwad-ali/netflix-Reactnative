@@ -11,7 +11,7 @@ export default {
     seasons: { 
         items: [{ 
             id: 'season1',
-            name: 'Season 1',
+            name: 'Season 1', 
             episodes: {
                 items: [{
                     id: 'episode1',
