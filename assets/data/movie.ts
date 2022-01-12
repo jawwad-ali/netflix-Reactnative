@@ -13,7 +13,7 @@ export default {
             id: 'season1',
             name: 'Season 1', 
             episodes: {
-                items: [{
+                items: [{ 
                     id: 'episode1',
                     title: '1. Pilot Part 1 & 2',
                     poster: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/ep0.jpg',

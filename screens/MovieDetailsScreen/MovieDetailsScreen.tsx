@@ -14,7 +14,6 @@ import { Movie, Season, Episode } from "../../src/models"
 import { useRoute } from "@react-navigation/native"
 
 function MovieDetailsScreen() {
-
     const [movie, setMovie] = useState<Movie | undefined>(undefined);
     const [seasons, setSeasons] = useState<Season[]>([])
     const [episodes, setEpisodes] = useState<Episode[]>([])
@@ -26,7 +25,6 @@ function MovieDetailsScreen() {
 
     // season name for the Picker
     const seasonNames = seasons ? seasons.map(season => season.name) : []
-    console.log("seasons", seasonNames)
     // current Route
     const route = useRoute()
 

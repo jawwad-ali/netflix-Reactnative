@@ -24,7 +24,7 @@ export default function HomeCategory(props: HomeCategoryProps) {
         fetchMovies()
     }, [])
 
-    return (
+    return ( 
         <View style={styles.container}>
             <Text style={styles.title}>{category.title}</Text>
             <FlatList

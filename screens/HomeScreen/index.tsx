@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   }, [])
 
   return (
-    <>
+    <> 
       <FlatList
         data={categories}
         renderItem={({ item }) => <HomeCategory category={item} />}

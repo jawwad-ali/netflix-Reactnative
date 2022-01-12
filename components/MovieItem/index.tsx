@@ -6,7 +6,7 @@ import { ActivityIndicator } from "react-native"
 import { useNavigation } from '@react-navigation/native';
 
 import styles from "./styles"
-
+ 
 import { Movie } from '../../src/models';
 
 import { Storage } from "aws-amplify"
@@ -26,7 +26,7 @@ function MovieItem({ movie }: { movie: Movie }) {
 
         if (movie.poster.startsWith("http")) {
             setImageUrl(movie.poster)
-            return
+            return 
         }
 
         Storage.get(movie.poster).then(setImageUrl)

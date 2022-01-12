@@ -7,12 +7,12 @@ import { Episode } from "../../types"
 
 interface EpisodeItemProps {
     episode: Episode
-    onPress: (eppisode: Episode) => void
-    // onPress: (eppisode: Episode) => {}
+    // onPress: (eppisode: Episode) => void
+    onPress: (eppisode: Episode) => {}
 }
 
 function EpisodeItem(props: EpisodeItemProps) {
-    const { episode, onPress } = props
+    const { episode, onPress } = props 
 
     return (
         <Pressable style={{ marginBottom: 25 }} onPress={() => onPress(episode)}>
